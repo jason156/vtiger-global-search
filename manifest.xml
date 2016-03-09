@@ -1,0 +1,48 @@
+<?xml version='1.0'?>
+<module>
+    <exporttime>2010-04-15 17:28:36</exporttime>
+    <name>Search</name>
+    <label>Global Search</label>
+    <parent>Settings</parent>
+    <version>2.0</version>
+    <dependencies>
+		<vtiger_version>6.0.0rc</vtiger_version>
+		<vtiger_max_version>6.*</vtiger_max_version>
+    </dependencies>
+	<license>
+		<inline><![CDATA[/*+**********************************************************************************
+		 * The contents of this file are subject to the vtiger CRM Public License Version 1.0
+		 * ("License"); You may not use this file except in compliance with the License
+		 * The Original Code is:  vtiger CRM Open Source
+		 * The Initial Developer of the Original Code is vtiger.
+		 * Portions created by vtiger are Copyright (C) vtiger.
+		 * All Rights Reserved.
+		 * The originaldeveloper is Yetiforce
+		 * Modified and improved by dubwise, crm-now.de
+		 * No warranty given, deploy it at your own risk!
+		 ************************************************************************************/]]>
+		</inline>
+	</license>
+	<tables>
+		<table>
+			<name>globalsearch_settings</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `globalsearch_settings` (
+			  `gstabid` int(19) NOT NULL,
+			  `searchcolumn` varchar(150) NOT NULL,
+			  `turn_off` int(1) NOT NULL DEFAULT '1',
+			  `sequence` int(19) NOT NULL,
+			  PRIMARY KEY (`gstabid`),
+			  CONSTRAINT `fk_1_globalsearch_settings` FOREIGN KEY (`gstabid`) REFERENCES `vtiger_tab` (`tabid`) ON DELETE CASCADE
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+		<name>globalsearch_data</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `globalsearch_data` (
+			  `gscrmid` int(19) NOT NULL,
+			  `searchlabel` varchar(255) NOT NULL,
+			  PRIMARY KEY (`gscrmid`),
+			  CONSTRAINT `fk_1_globalsearch_data` FOREIGN KEY (`gscrmid`) REFERENCES `vtiger_crmentity` (`crmid`) ON DELETE CASCADE
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+	</tables>
+</module>

@@ -10,7 +10,7 @@
 var Settings_Index_Js = {
 	updatedBlockFieldsList: [],
 	initEvants: function () {
-		$('.SearchFieldsEdit .fieldname').change(Settings_Index_Js.save);
+		$('.SearchFieldsEdit .displayfield').change(Settings_Index_Js.save);
 		$('.SearchFieldsEdit .searchcolumn').change(Settings_Index_Js.save);
 		$('.SearchFieldsEdit .updateLabels').click(Settings_Index_Js.updateLabels);
 		$('.SearchFieldsEdit .turn_off').click(Settings_Index_Js.replacement);

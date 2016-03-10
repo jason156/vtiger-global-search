@@ -69,7 +69,7 @@ class Settings_Search_Module_Model extends Settings_Vtiger_Module_Model
 		$adb = PearDatabase::getInstance();
 		$name = $params['name'];
 
-		if ($name == 'searchcolumn' || $name == 'fieldname') {
+		if ($name == 'searchcolumn' || $name == 'displayfield') {
 			$value = implode(',', $params['value']);
  
 			$adb->pquery("UPDATE vtiger_entityname LEFT JOIN globalsearch_settings ON vtiger_entityname.tabid = globalsearch_settings.gstabid SET " . $name . " = ? WHERE tabid = ?", array($value, (int) $params['tabid']));
@@ -112,7 +112,7 @@ class Settings_Search_Module_Model extends Settings_Vtiger_Module_Model
 
 		}
 
-		$fieldname = $moduleEntity['fieldname'];
+		$fieldname = $moduleEntity['displayfield'];
 		$searchcolumn = $moduleEntity['searchcolumn'];
 		$moduleInfo = Vtiger_Functions::getModuleFieldInfos($modulename);
 		$columns_name = explode(',', $fieldname);

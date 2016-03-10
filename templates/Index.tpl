@@ -56,10 +56,10 @@
 								{vtranslate($item['modulename'],$item['modulename'])}
 							</td>
 							<td>
-								<select multiple class="chzn-select col-md-4 fieldname" name="fieldname">
+								<select multiple class="chzn-select col-md-4 displayfield" name="displayfield">
 									<optgroup>
 										{foreach from=$Field item=fieldTab }
-											<option value="{$fieldTab['columnname']}" {if $MODULE_MODEL->compare_vale($item['fieldname'],$fieldTab['columnname'])}selected{/if}>
+											<option value="{$fieldTab['columnname']}" {if $MODULE_MODEL->compare_vale($item['displayfield'],$fieldTab['columnname'])}selected{/if}>
 												{vtranslate($fieldTab['fieldlabel'],$item['modulename'])}
 											</option>
 										{/foreach}

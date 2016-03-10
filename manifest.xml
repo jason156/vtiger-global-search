@@ -4,7 +4,7 @@
     <name>Search</name>
     <label>Global Search</label>
     <parent>Settings</parent>
-    <version>2.0</version>
+    <version>3.0</version>
     <dependencies>
 		<vtiger_version>6.0.0rc</vtiger_version>
 		<vtiger_max_version>6.*</vtiger_max_version>
@@ -28,6 +28,7 @@
 			<name>globalsearch_settings</name>
 			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `globalsearch_settings` (
 			  `gstabid` int(19) NOT NULL,
+			  `displayfield` varchar(150) NOT NULL,
 			  `searchcolumn` varchar(150) NOT NULL,
 			  `turn_off` int(1) NOT NULL DEFAULT '1',
 			  `sequence` int(19) NOT NULL,

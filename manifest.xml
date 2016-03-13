@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <module>
     <exporttime>2010-04-15 17:28:36</exporttime>
-    <name>Search</name>
+    <name>GlobalSearch</name>
     <label>Global Search</label>
     <parent>Settings</parent>
     <version>3.0</version>
